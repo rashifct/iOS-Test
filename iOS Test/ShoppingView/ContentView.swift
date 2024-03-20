@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var searchText = ""
     @State private var currentCategoryIndex = 0
+    let imageNames = ["electronics", "shoes", "dresses"]
     
     var displayedProducts: [Product] {
         let startIndex = currentCategoryIndex * 8
@@ -54,7 +55,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            CategoriesView(currentCategoryIndex: $currentCategoryIndex)
+            HorizontalCollectionView(currentCategoryIndex: $currentCategoryIndex, imageNames: imageNames)
                 .frame(height: 150)
                 .padding(.top, 30)
             
